@@ -1,18 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
+import axios from 'axios'
+import { Router } from 'next/router';
+import Link from 'next/link'
 
 export default function Home() {
-  async function enable() {
-    if (typeof window.webln === "undefined") {
-      return alert("No WebLN available.");
-    }
-    try {
-      await window.webln.enable();
-    } catch (error) {
-      alert("User denied permission or cancelled.");
-    }
-  }
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(res => {
+        setPosts(res.data)
+      })
+      .catch(err => console.log(err))
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,11 +26,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <button onClick={() => enable()}>Connect</button>
+        {
+          posts.map(post => {
+            return(
+              <div
+              id={post.id}
+              className={styles.post}>
+                <h1>{post.title}</h1>
+                <p>{post.body}</p>
+                <Link href={{pathname: '/posts/[slug]', query: { slug: post.id }}}>
+                  <button className={styles.visitButton}>Visit</button>
+                </Link>
+              </div>
+            )
+          })
+        }
       </main>
 
       <footer className={styles.footer}>
