@@ -9,7 +9,6 @@ export default function Home() {
     }
     try {
       await window.webln.enable();
-      celebrate();
     } catch (error) {
       alert("User denied permission or cancelled.");
     }
