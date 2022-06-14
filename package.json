@@ -1,29 +1,20 @@
 {
   "name": "webln-example",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AustinKelsay/webln-example.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AustinKelsay/webln-example/issues"
-  },
-  "homepage": "https://github.com/AustinKelsay/webln-example#readme",
   "dependencies": {
-    "parcel": "^2.6.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "process": "^0.11.10"
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
   }
 }
