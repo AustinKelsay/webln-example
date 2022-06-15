@@ -11,8 +11,33 @@
     text-align: center;
 }
 
-.commentContainer {
-    margin: 2% auto;
+.comment {
     width: 80%;
-    border-top: 1px solid black;
+    margin: 1% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #6366F1;
+}
+
+.comment p h4 {
+    align-items: flex-start;
+}
+
+.comment span {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.upvoteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 1% auto;
+}
+
+.dataScroller {
+    width: 80%;
+    margin: 2% auto;
 }
