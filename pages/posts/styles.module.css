@@ -1,0 +1,18 @@
+.post {
+    width: 80%;
+    background: oldlace;
+    padding: 1%;
+    margin: 1% auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+  
+.post h1 p {
+    text-align: center;
+}
+
+.commentContainer {
+    margin: 2% auto;
+    width: 80%;
+    border-top: 1px solid black;
+}
