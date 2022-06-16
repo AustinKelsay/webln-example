@@ -6,8 +6,8 @@ import { useRouter } from 'next/router'
 import {useState, useEffect} from "react"
 import { DataScroller } from 'primereact/datascroller';
 import { Button } from 'primereact/button';
-import Sidebar from '../../components/sidebar';
-import styles from "./styles.module.css"
+import Sidebar from '../components/Sidebar';
+import styles from "./Posts.module.css"
 import axios from "axios"
 
 const Post = () => {
@@ -50,8 +50,7 @@ const Post = () => {
 }
 
   return (
-    <div>
-        <Sidebar />
+    <div className={styles.page}>
         <div className={styles.post}>
             <h1>{post.title}</h1>
             <p>{post.body}</p>

@@ -1,0 +1,12 @@
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 6vh;
+    border: 1px solid black;
+    background: oldlace;
+}
+
+.footer h1 {
+    text-align: center;
+}
